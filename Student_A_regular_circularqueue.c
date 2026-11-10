@@ -3,32 +3,25 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-// Include dataset headers directly without modifying or copying them
 #include "tasks.h"
 #include "energy.h"
 
 #define MAX_READY_QUEUE 1000
 
-// Result tracking metrics
 typedef struct {
     uint16_t tasks_done;
     uint16_t tasks_missed;
     uint32_t wasted_energy;
-    uint32_t scheduling_steps; // Operational cost tracking
+    uint32_t scheduling_steps;
     uint32_t final_energy;
 } sched_result_t;
 
-// Student A: Circular Queue Structure
 typedef struct {
     task_t data[MAX_READY_QUEUE];
     uint16_t front;
     uint16_t rear;
     uint16_t count;
 } circular_queue_t;
-
-// ==========================================
-// CIRCULAR QUEUE OPERATIONS (Student A)
-// ==========================================
 
 void queue_init(circular_queue_t *q) {
     q->front = 0;
@@ -67,10 +60,10 @@ bool queue_peek(const circular_queue_t *q, task_t *out_task) {
 }
 
 // ==========================================
-// SIMULATION ENGINE (Student A)
+// SIMULATION ENGINE WITH STEP TRACING
 // ==========================================
 
-sched_result_t run_student_a_queue(void) {
+sched_result_t run_student_a_queue_with_trace(uint32_t max_steps_to_trace) {
     sched_result_t res = {0, 0, 0, 0, 0};
     circular_queue_t ready_q;
     queue_init(&ready_q);
@@ -79,16 +72,34 @@ sched_result_t run_student_a_queue(void) {
     uint16_t next_task_idx = 0;
 
     for (uint32_t step = 0; step < NUM_STEPS; step++) {
+        bool activity_in_step = false;
+
+        // Trace header (only prints if within the max_steps limit)
+        if (step < max_steps_to_trace) {
+            printf("[Step %5u] Energy trace input: +%u | Buffer: %u", 
+                    step, energy_in[step], energy_buffer);
+        }
+
         // 1. Harvest Energy & Cap Buffer
         energy_buffer += energy_in[step];
         if (energy_buffer > ENERGY_MAX) {
-            res.wasted_energy += (energy_buffer - ENERGY_MAX);
+            uint32_t overflow = energy_buffer - ENERGY_MAX;
+            res.wasted_energy += overflow;
             energy_buffer = ENERGY_MAX;
+            if (step < max_steps_to_trace && overflow > 0) {
+                printf(" (Wasted: %u)", overflow);
+            }
         }
+        if (step < max_steps_to_trace) printf("\n");
 
         // 2. Add arriving tasks to ready queue
         while (next_task_idx < NUM_TASKS && tasks[next_task_idx].arrival == step) {
             queue_enqueue(&ready_q, tasks[next_task_idx]);
+            if (step < max_steps_to_trace) {
+                printf("  -> Event: Task ID %u arrived! (Cost: %u, Deadline: %u) [Queue size: %u]\n",
+                        tasks[next_task_idx].id, tasks[next_task_idx].cost, 
+                        tasks[next_task_idx].deadline, ready_q.count);
+            }
             next_task_idx++;
         }
 
@@ -99,8 +110,12 @@ sched_result_t run_student_a_queue(void) {
             if (step > front_task.deadline) {
                 queue_dequeue(&ready_q, NULL);
                 res.tasks_missed++;
+                if (step < max_steps_to_trace) {
+                    printf("  -> Event: Task ID %u MISSED deadline (%u)! Discarded from front.\n", 
+                            front_task.id, front_task.deadline);
+                }
             } else {
-                break; // Head task is still valid
+                break; 
             }
         }
 
@@ -111,11 +126,19 @@ sched_result_t run_student_a_queue(void) {
                 energy_buffer -= front_task.cost;
                 queue_dequeue(&ready_q, NULL);
                 res.tasks_done++;
+                if (step < max_steps_to_trace) {
+                    printf("  -> Event: EXECUTED Task ID %u! Used %u energy. Remaining Buffer: %u\n", 
+                            front_task.id, front_task.cost, energy_buffer);
+                }
+            } else {
+                if (step < max_steps_to_trace) {
+                    printf("  -> Waiting: Task ID %u at front needs %u energy, but buffer has %u.\n", 
+                            front_task.id, front_task.cost, energy_buffer);
+                }
             }
         }
     }
 
-    // Mark any remaining tasks as missed at simulation end
     task_t remaining;
     while (queue_dequeue(&ready_q, &remaining)) {
         res.tasks_missed++;
@@ -125,19 +148,18 @@ sched_result_t run_student_a_queue(void) {
     return res;
 }
 
-// ==========================================
-// MAIN FUNCTION & DISPLAY
-// ==========================================
-
 int main(void) {
-    printf("=========================================\n");
-    printf("   Student A: FCFS Circular Queue        \n");
-    printf("=========================================\n");
-    printf("Loaded dataset: %d steps, %d tasks\n\n", NUM_STEPS, NUM_TASKS);
+    // Pass how many steps you want to print step-by-step (e.g., first 500 steps)
+    uint32_t steps_to_print = 500;
 
-    sched_result_t res_a = run_student_a_queue();
+    printf("====================================================\n");
+    printf("   Student A: FCFS Circular Queue (Step-by-Step Trace) \n");
+    printf("====================================================\n");
+    printf("Showing detailed trace for first %u steps...\n\n", steps_to_print);
 
-    printf("--- Results ---\n");
+    sched_result_t res_a = run_student_a_queue_with_trace(steps_to_print);
+
+    printf("\n--- Final Simulation Summary ---\n");
     printf("Tasks Completed:   %u\n", res_a.tasks_done);
     printf("Tasks Missed:      %u\n", res_a.tasks_missed);
     printf("Wasted Energy:     %u units\n", res_a.wasted_energy);
