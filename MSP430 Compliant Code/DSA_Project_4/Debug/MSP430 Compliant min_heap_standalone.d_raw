@@ -1,0 +1,22 @@
+min_heap_standalone.obj: C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430\\ Compliant\\ Code/min_heap_standalone.c
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/ccs_base/msp430/include/msp430.h
+min_heap_standalone.obj: C:\ti\ccs2101\ccs\ccs_base\msp430\include\msp430f5529.h
+min_heap_standalone.obj: C:\ti\ccs2101\ccs\ccs_base\msp430\include\in430.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/intrinsics.h
+min_heap_standalone.obj: C:\ti\ccs2101\ccs\tools\compiler\ti-cgt-msp430_21.6.3.LTS\include\intrinsics_legacy_undefs.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdint.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/_ti_config.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/linkage.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/_stdint40.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/stdint.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/cdefs.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/_types.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/machine/_types.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/machine/_stdint.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/_stdint.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdbool.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stddef.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdio.h
+min_heap_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdarg.h
+min_heap_standalone.obj: C:\Users\abhis\Documents\GitHub\DSA-Project-No.4\MSP430\\ Compliant\\ Code\energy.h
+min_heap_standalone.obj: C:\Users\abhis\Documents\GitHub\DSA-Project-No.4\MSP430\\ Compliant\\ Code\tasks.h

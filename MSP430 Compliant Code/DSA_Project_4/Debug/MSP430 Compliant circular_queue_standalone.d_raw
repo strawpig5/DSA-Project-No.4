@@ -1,0 +1,22 @@
+circular_queue_standalone.obj: C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430\\ Compliant\\ Code/circular_queue_standalone.c
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/ccs_base/msp430/include/msp430.h
+circular_queue_standalone.obj: C:\ti\ccs2101\ccs\ccs_base\msp430\include\msp430f5529.h
+circular_queue_standalone.obj: C:\ti\ccs2101\ccs\ccs_base\msp430\include\in430.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/intrinsics.h
+circular_queue_standalone.obj: C:\ti\ccs2101\ccs\tools\compiler\ti-cgt-msp430_21.6.3.LTS\include\intrinsics_legacy_undefs.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdint.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/_ti_config.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/linkage.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/_stdint40.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/stdint.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/cdefs.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/_types.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/machine/_types.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/machine/_stdint.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/sys/_stdint.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdbool.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stddef.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdio.h
+circular_queue_standalone.obj: C:/ti/ccs2101/ccs/tools/compiler/ti-cgt-msp430_21.6.3.LTS/include/stdarg.h
+circular_queue_standalone.obj: C:\Users\abhis\Documents\GitHub\DSA-Project-No.4\MSP430\\ Compliant\\ Code\energy.h
+circular_queue_standalone.obj: C:\Users\abhis\Documents\GitHub\DSA-Project-No.4\MSP430\\ Compliant\\ Code\tasks.h

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>DSA_Project_4</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ti.ccstudio.core.ccsNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>circular_queue_standalone.c</name>
+			<type>1</type>
+			<location>C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430 Compliant Code/circular_queue_standalone.c</location>
+		</link>
+		<link>
+			<name>energy.h</name>
+			<type>1</type>
+			<location>C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430 Compliant Code/energy.h</location>
+		</link>
+		<link>
+			<name>min_heap_standalone.c</name>
+			<type>1</type>
+			<location>C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430 Compliant Code/min_heap_standalone.c</location>
+		</link>
+		<link>
+			<name>msp430board_minheap.c</name>
+			<type>1</type>
+			<location>C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430 Compliant Code/msp430board_minheap.c</location>
+		</link>
+		<link>
+			<name>tasks.h</name>
+			<type>1</type>
+			<location>C:/Users/abhis/Documents/GitHub/DSA-Project-No.4/MSP430 Compliant Code/tasks.h</location>
+		</link>
+	</linkedResources>
+</projectDescription>
